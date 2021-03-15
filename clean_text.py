@@ -19,5 +19,6 @@ def clean_text(text):
     text = re.sub('[%s]' % re.escape(string.punctuation), '', text)
     text = re.sub('\n', '', text)
     text = re.sub('\w*\d\w*', '', text)
+    text = re.sub(r'[^\w]', '', text)
 
     return text

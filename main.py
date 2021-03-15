@@ -127,13 +127,13 @@ tokenized_test = tokenizer.texts_to_sequences(test_df)
 
 
 
-maxlen = 200
-X_train = pad_sequences(tokenized_train, maxlen = maxlen)
-X_test = pad_sequences(tokenized_test, maxlen = maxlen)
-
 embed_size = 128
 maxlen = 200
 max_features = 22000
+X_train = pad_sequences(tokenized_train, maxlen = maxlen)
+X_test = pad_sequences(tokenized_test, maxlen = maxlen)
+
+
 
 inp = Input(shape = (maxlen, ))
 x = Embedding(max_features, embed_size)(inp)
